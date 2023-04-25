@@ -15,7 +15,7 @@ export default function App() {
     return <View />
   } else {
   return (
-      <SafeAreaView>
+      <SafeAreaView style={{ flex: 1 }}>
       <StatusBar />
       <Basket {...mock} />
       </SafeAreaView>
