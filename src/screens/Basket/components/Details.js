@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { TouchableOpacity, Image, StyleSheet, View } from 'react-native';
 import CustomText from '../../../components/CustomText';
 
-export default function Details({ basketName, farmLogo, farmName, description, price }) {
+export default function Details({ basketName, farmLogo, farmName, description, price, button }) {
   return(
       <>
         <CustomText style={styles.basketName}>{ basketName }</CustomText>
@@ -14,6 +14,9 @@ export default function Details({ basketName, farmLogo, farmName, description, p
           { description }
         </CustomText>
         <CustomText style={styles.price}>{ price }</CustomText>
+        <TouchableOpacity style={styles.button}>
+          <CustomText style={styles.textButton}>{ button }</CustomText>
+        </TouchableOpacity>
       </>      
   )
 };
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
   farm: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 12,
+    paddingVertical: 12
   },
   farmImage: {
     width: 32,
@@ -49,6 +52,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 26,
     lineHeight: 42,
-    marginTop: 8,
+    marginTop: 8
+  },
+  button: {
+   marginTop: 16,
+   backgroundColor: '#2a9f85',
+   paddingVertical: 16,
+   borderRadius: 8
+  },
+  textButton: {
+    textAlign: 'center',
+    color: '#fff',
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: 'bold'
   }
 });
